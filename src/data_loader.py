@@ -18,7 +18,6 @@ cols_to_drop = [
 dataset = pd.read_csv('data/raw/SDsS_DR18.csv')
 dataset = dataset.drop(columns=cols_to_drop)
 x = dataset.drop(columns=['class'])
-print(x[0:1])
 y = dataset['class']
 
 # Common way is to just ignore the missing data
@@ -46,7 +45,6 @@ X_test = sc.transform(X_test)
 
 dataset = pd.DataFrame(dataset)
 X_train_df = pd.DataFrame(X_train, columns=original_cols)
-print(X_train_df[0:10])
 X_test_df = pd.DataFrame(X_test, columns=original_cols)
 Y_train_df = pd.DataFrame(Y_train, columns=["class"])
 Y_test_df = pd.DataFrame(Y_test, columns=["class"])
